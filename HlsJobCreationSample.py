@@ -1,7 +1,7 @@
 import hashlib
 import json
 
-import boto3.elastictranscoder
+import boto.elastictranscoder
 
 # This is the ID of the Elastic Transcoder pipeline that was created when
 # setting up your AWS environment:
@@ -29,7 +29,7 @@ segment_duration = '2'
 output_key_prefix = 'elastic-transcoder-samples/output/hls/'
     
 # Creating client for accessing elastic transcoder 
-transcoder_client = boto3.elastictranscoder.connect_to_region(region)
+transcoder_client = boto.elastictranscoder.connect_to_region(region)
 
 # Setup the job input using the provided input key.
 job_input = { 'Key': input_key }
